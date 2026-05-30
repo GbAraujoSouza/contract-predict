@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  --background: #061019;
+  --surface: rgba(15, 34, 45, 0.72);
+  --surface-strong: rgba(20, 46, 58, 0.88);
+  --line: rgba(158, 216, 219, 0.14);
+  --text: #eaf9f6;
+  --muted: #97b5b7;
+  --green: #6ee7b7;
+  --blue: #67c9f5;
+  --warning: #f9c66d;
+  --font-body: 'Manrope', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+}
+
+body {
+  background:
+    radial-gradient(circle at 18% 4%, rgba(34, 134, 160, 0.24), transparent 30rem),
+    radial-gradient(circle at 82% 38%, rgba(31, 150, 115, 0.12), transparent 26rem),
+    var(--background);
+  color: var(--text);
+  font-family: var(--font-body);
+  margin: 0;
+  min-height: 100vh;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.page-shell {
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 4vw, 2rem);
+}
+
+.eyebrow {
+  color: var(--green);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.04em;
+  margin-top: 0;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.glass-card {
+  background: linear-gradient(145deg, rgba(21, 48, 60, 0.78), rgba(9, 27, 38, 0.6));
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+}

@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Data and generated ML artifacts
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/outputs/*
+!data/outputs/.gitkeep
+backend/models/*
+!backend/models/.gitkeep
+backend/outputs/*
+!backend/outputs/.gitkeep
+
+# Angular and Node
+node_modules/
+dist/
+.angular/
+coverage/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+

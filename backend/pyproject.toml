@@ -1,0 +1,14 @@
+[project]
+name = "contract-predict-api"
+version = "0.1.0"
+description = "API base para o projeto academico Contract Predict."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.0,<1.0.0",
+    "uvicorn[standard]>=0.34.0,<1.0.0",
+]
+
+[dependency-groups]
+dev = []
+

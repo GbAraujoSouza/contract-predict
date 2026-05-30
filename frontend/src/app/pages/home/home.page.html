@@ -1,0 +1,87 @@
+<section class="page-shell">
+  <div class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Machine Learning + Mercados de previsão</p>
+      <h1>Antecipando movimentos com sinais do livro de ofertas.</h1>
+      <p class="hero-text">
+        Uma investigação acadêmica sobre como desequilíbrio, liquidez e spread podem ajudar a
+        prever movimentos de curto prazo em contratos binários do Polymarket.
+      </p>
+      <div class="hero-actions">
+        <a class="primary-action" routerLink="/info">Entenda o projeto</a>
+        <div class="api-status" [class.online]="apiStatus() === 'online'" [class.offline]="apiStatus() === 'offline'">
+          <span class="status-dot"></span>
+          @switch (apiStatus()) {
+            @case ('online') { API conectada }
+            @case ('offline') { API indisponível }
+            @default { Verificando API }
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="market-card glass-card" aria-label="Ilustração de dados do livro de ofertas">
+      <div class="market-header">
+        <span>ORDER BOOK SIGNAL</span>
+        <span class="live-tag">15 MIN</span>
+      </div>
+      <div class="market-price">
+        <strong>0.67</strong>
+        <span>probabilidade implícita</span>
+      </div>
+      <div class="signal-grid">
+        <div><span>Bid</span><strong>0.66</strong></div>
+        <div><span>Ask</span><strong>0.68</strong></div>
+        <div><span>Spread</span><strong>0.02</strong></div>
+        <div><span>Imbalance</span><strong class="positive">+18%</strong></div>
+      </div>
+      <div class="depth-bars">
+        <span style="--size: 48%"></span>
+        <span style="--size: 76%"></span>
+        <span style="--size: 62%"></span>
+        <span style="--size: 88%"></span>
+        <span style="--size: 68%"></span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section-block">
+    <p class="eyebrow">O problema</p>
+    <h2>O livro de ofertas contém sinais úteis?</h2>
+    <p>
+      O projeto busca prever se o preço de um contrato binário irá subir nos próximos 15 minutos.
+      Em vez de tentar antecipar o resultado final de um evento, analisamos sua dinâmica de
+      negociação: pressão compradora, pressão vendedora, spread e comportamento recente do preço.
+    </p>
+  </section>
+
+  <section class="feature-grid" aria-label="Escopo da análise">
+    <article class="glass-card">
+      <span>01</span>
+      <h3>Microestrutura</h3>
+      <p>Profundidade, liquidez e desequilíbrio entre ordens de compra e venda.</p>
+    </article>
+    <article class="glass-card">
+      <span>02</span>
+      <h3>Classificação</h3>
+      <p>Modelos supervisionados para estimar se o preço tende a subir em curto prazo.</p>
+    </article>
+    <article class="glass-card">
+      <span>03</span>
+      <h3>Interpretação</h3>
+      <p>Comparação de métricas e análise das variáveis que influenciam as previsões.</p>
+    </article>
+  </section>
+
+  <section class="roadmap glass-card">
+    <div>
+      <p class="eyebrow">Próximas etapas</p>
+      <h2>Da base da aplicação ao dashboard.</h2>
+    </div>
+    <ol>
+      <li><strong>01</strong><span>Arquitetura inicial</span></li>
+      <li><strong>02</strong><span>Pipeline e modelos</span></li>
+      <li><strong>03</strong><span>Dashboards interativos</span></li>
+    </ol>
+  </section>
+</section>
