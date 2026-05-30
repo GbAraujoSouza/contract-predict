@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 import { HealthResponse } from '../models/health-response.model';
 
-const API_URL = 'http://localhost:8000';
+const API_URL = 'https://contract-predict-api.onrender.com';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
