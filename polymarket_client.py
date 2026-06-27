@@ -185,3 +185,72 @@ def fetch_open_interest(condition_id: str) -> list[dict]:
 
 def fetch_orderbook(token_id: str) -> dict:
     return _get(f"{CLOB_API}/book", {"token_id": token_id})
+
+
+def list_markets(
+    *,
+    limit: int = 100,
+    offset: int = 0,
+    condition_id: str | None = None,
+    active: bool | None = None,
+    closed: bool | None = None,
+    order: str | None = None,
+    ascending: bool | None = None,
+) -> list[dict]:
+    """Lista mercados via Gamma API."""
+    params: dict[str, Any] = {"limit": limit, "offset": offset}
+    if condition_id:
+        params["condition_id"] = condition_id
+    if active is not None:
+        params["active"] = str(active).lower()
+    if closed is not None:
+        params["closed"] = str(closed).lower()
+    if order:
+        params["order"] = order
+    if ascending is not None:
+        params["ascending"] = str(ascending).lower()
+    return _get(f"{GAMMA_API}/markets", params)
+
+
+def get_market_by_condition_id(condition_id: str) -> dict | None:
+    markets = list_markets(condition_id=condition_id, limit=1)
+    return markets[0] if markets else None
+
+
+def discover_liquid_markets(
+    *,
+    min_volume: float = 100_000.0,
+    max_markets: int = 200,
+    active: bool = True,
+    page_size: int = 100,
+) -> list[dict]:
+    """Descobre mercados movimentados ordenados por volume."""
+    collected: list[dict] = []
+    offset = 0
+
+    while len(collected) < max_markets:
+        batch = list_markets(
+            limit=page_size,
+            offset=offset,
+            active=active,
+            closed=not active,
+            order="volume",
+            ascending=False,
+        )
+        if not batch:
+            break
+
+        for market in batch:
+            volume = float(market.get("volume") or 0)
+            if volume >= min_volume:
+                collected.append(market)
+                if len(collected) >= max_markets:
+                    break
+
+        if len(batch) < page_size:
+            break
+        offset += page_size
+        time.sleep(DEFAULT_SLEEP)
+
+    return collected
+
