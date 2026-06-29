@@ -147,7 +147,7 @@ def protocol_temporal(x, y, bars, *, run_cv: bool = True) -> dict:
 
 
 def protocol_chrono_8020(x, y) -> dict:
-    """Split cronológico 80/20 global (lightdm.ipynb) — sem holdout por data."""
+    """Split cronológico 80/20 global (lightgbm.ipynb) — sem holdout por data."""
     split_idx = int(len(x) * 0.8)
     x_tr, x_te = x.iloc[:split_idx], x.iloc[split_idx:]
     y_tr, y_te = y[:split_idx], y[split_idx:]

@@ -12,7 +12,7 @@ st.markdown(
     | Protocolo | Descrição | Tamanho do teste |
     |-----------|-----------|------------------|
     | **Com split temporal** | Treino até 09/03, holdout 10–11/03 + TSCV | 638k linhas (futuro real) |
-    | **80/20 cronológico** | Como `lightdm.ipynb`: últimos 20% das linhas | 1,12M linhas |
+    | **80/20 cronológico** | Como `lightgbm.ipynb`: últimos 20% das linhas | 1,12M linhas |
     | **80/20 aleatório** | `train_test_split(shuffle=True)` — vaza tempo | 1,12M linhas |
     """
 )

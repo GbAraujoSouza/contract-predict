@@ -17,7 +17,7 @@ st.markdown(
 
     ### Navegação
     - **Dataset** — visão geral dos dados, features e desbalanceamento de classes
-    - **Sem Split Temporal (lightdm)** — modelo inicial LightGBM, 80/20 cronológico sem validação temporal
+    - **Sem Split Temporal (lightgbm)** — modelo inicial LightGBM, 80/20 cronológico sem validação temporal
     - **Regressão Logística** — baseline linear com `TimeSeriesSplit` + holdout por data
     - **Modelos de Árvore** — LightGBM, Decision Tree e Random Forest com protocolo temporal
     - **Comparação de Splits** — impacto de embaralhar dados em série temporal

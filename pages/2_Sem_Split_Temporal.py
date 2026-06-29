@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 
 st.set_page_config(page_title="Sem Split Temporal", page_icon="📈", layout="wide")
-st.title("📈 Modelo inicial — LightGBM sem split temporal (`lightdm.ipynb`)")
+st.title("📈 Modelo inicial — LightGBM sem split temporal (`lightgbm.ipynb`)")
 
 st.markdown(
     """
