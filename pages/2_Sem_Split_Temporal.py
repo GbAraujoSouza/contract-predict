@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 
 st.set_page_config(page_title="Sem Split Temporal", page_icon="📊", layout="wide")
 st.title("📊 Modelos sem Split Temporal")
-st.caption("Notebook: `lightgbm.ipynb` — split cronológico simples 80/20 + K-Fold (5 folds, shuffle=False)")
+st.caption("Notebook: `modelos_sem_serie_temporal.ipynb` — split cronológico simples 80/20 + K-Fold (5 folds, shuffle=False)")
 
 st.warning(
     "⚠️ Esta etapa usa apenas um split cronológico 80/20 (sem purga, sem walk-forward). "
